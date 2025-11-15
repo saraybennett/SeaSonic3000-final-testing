@@ -1,0 +1,355 @@
+html,
+body {
+  /* background: linear-gradient(to bottom, rgba(122, 122, 223), rgb(13, 3, 43)); */
+  font-family: "Saira Semi Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  margin: 0;
+  background-image: url("./images/background.jpeg");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  /* min-height: 200vh; */
+}
+
+p {
+  font-family: "Saira Semi Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+}
+
+h1 {
+  font-family: "Genos", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: justify;
+}
+
+.heading {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  position: fixed;
+  /* background-color: rgb(165, 196, 219, 0.7);
+  padding: 24px; */
+  /* border: 2px solid white; */
+  /* border-radius: 8px; */
+  /* box-shadow: 10px 5px 5px white; */
+  display: flex;
+  flex-direction: column;
+  /* font-optical-sizing: auto; */
+  font-size: 50px;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+.cursor {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* Center the cursor on the coordinates */
+  /* opacity: 0.8; */
+  transition: all 0.1s ease; /* Smooth movement */
+  z-index: 99; /*Ensure cursors appear on top*/
+}
+
+.creature-img {
+  position: absolute;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.creature-still {
+  position: absolute;
+  height: auto;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.creature-img:hover {
+  transform: scale(1.1) !important; /* Slightly enlarges on hover */
+}
+/* FOUND THIS OUT!  So with animations it will change over the course of time based on these percentages*/
+/* Exaggerated animations for when audio is playing */
+@keyframes pulse-and-float {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  25% {
+    transform: scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(100, 200, 255, 0.8));
+  }
+  50% {
+    transform: scale(1.2) translateY(-20px) rotate(5deg);
+    filter: drop-shadow(0 0 35px rgba(100, 200, 255, 1));
+  }
+  75% {
+    transform: scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(100, 200, 255, 0.8));
+  }
+}
+
+.creature-img.playing {
+  animation: pulse-and-float 2s ease-in-out infinite;
+  z-index: 1000;
+}
+
+#plankton {
+  bottom: -130vh; /* Use percentages for responsive positioning */
+  /* left: 50%; */
+  width: 80vw; /* Use vw (viewport width) for scaling */
+  /* min-width: 150px; Minimum size */
+}
+
+#seaweed {
+  bottom: -50vh;
+  left: -10vh;
+  width: 30vw;
+  transform: rotate(90deg);
+  /* min-width: 120px; */
+}
+
+#seaweed:hover {
+  transform: rotate(90deg) scale(1.1) !important;
+}
+
+/* Animation for seaweed with rotation */
+@keyframes seaweed-pulse {
+  0%,
+  100% {
+    transform: rotate(90deg) scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  25% {
+    transform: rotate(90deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(100, 255, 150, 0.8));
+  }
+  50% {
+    transform: rotate(95deg) scale(1.2) translateY(-20px);
+    filter: drop-shadow(0 0 35px rgba(100, 255, 150, 1));
+  }
+  75% {
+    transform: rotate(90deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(100, 255, 150, 0.8));
+  }
+}
+
+#seaweed.playing {
+  animation: seaweed-pulse 2s ease-in-out infinite;
+  z-index: 1000;
+}
+
+#seaweed2 {
+  /* bottom: -220vh; Positioned lower on the page - scroll down to see it */
+  left: 10%;
+  width: 30vw;
+  min-width: 200px;
+  /* transform: rotate(90deg);
+  transform-origin: bottom left; */
+}
+
+#seaweed2:hover {
+  transform: scale(1.1) !important;
+}
+
+#angler {
+  top: 55vh;
+  left: 65%;
+  width: 30vw;
+  /* min-width: 180px; */
+  /* transform: rotate(-30deg); */
+}
+
+/* #angler:hover {
+  transform: rotate(-40deg) scale(1.1) !important;
+} */
+
+/* Animation for angler with rotation */
+@keyframes angler-pulse {
+  0%,
+  100% {
+    transform: rotate(-30deg) scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  25% {
+    transform: rotate(-35deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(255, 200, 100, 0.8));
+  }
+  50% {
+    transform: rotate(-25deg) scale(1.2) translateY(-20px);
+    filter: drop-shadow(0 0 35px rgba(255, 200, 100, 1));
+  }
+  75% {
+    transform: rotate(-35deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(255, 200, 100, 0.8));
+  }
+}
+
+#angler.playing {
+  animation: angler-pulse 2s ease-in-out infinite;
+  z-index: 1000;
+}
+
+#angel {
+  top: 0vh;
+  left: 62%;
+  width: 25vw;
+  /* min-width: 160px; */
+}
+
+#urchin {
+  top: 10%;
+  left: 3%;
+  width: 24vw;
+  /* min-width: 100px; */
+  transform: rotate(110deg);
+}
+
+#urchin:hover {
+  transform: rotate(110deg) scale(1.1) !important;
+}
+
+/* Animation for urchin with rotation */
+@keyframes urchin-pulse {
+  0%,
+  100% {
+    transform: rotate(110deg) scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  25% {
+    transform: rotate(115deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(255, 100, 255, 0.8));
+  }
+  50% {
+    transform: rotate(105deg) scale(1.2) translateY(-20px);
+    filter: drop-shadow(0 0 35px rgba(255, 100, 255, 1));
+  }
+  75% {
+    transform: rotate(115deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(255, 100, 255, 0.8));
+  }
+}
+
+#urchin.playing {
+  animation: urchin-pulse 2s ease-in-out infinite;
+  z-index: 1000;
+}
+
+#eel {
+  top: 50vh;
+  left: 3%;
+  width: 47vw;
+  /* min-width: 250px; */
+}
+
+#gearsnail {
+  top: 75vh;
+  left: 40%;
+  width: 25vw;
+  transform: rotate(-20deg);
+  /* min-width: 120px; */
+}
+
+/* Animation for gearsnail with rotation */
+@keyframes gearsnail-pulse {
+  0%,
+  100% {
+    transform: rotate(-20deg) scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+  25% {
+    transform: rotate(-25deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(200, 150, 100, 0.8));
+  }
+  50% {
+    transform: rotate(-15deg) scale(1.2) translateY(-20px);
+    filter: drop-shadow(0 0 35px rgba(200, 150, 100, 1));
+  }
+  75% {
+    transform: rotate(-25deg) scale(1.15) translateY(-15px);
+    filter: drop-shadow(0 0 25px rgba(200, 150, 100, 0.8));
+  }
+}
+
+#gearsnail.playing {
+  animation: gearsnail-pulse 2s ease-in-out infinite;
+  z-index: 1000;
+}
+
+#jelly {
+  top: 11vh;
+  left: 8%;
+  width: 25vw;
+  width: 200px; /* Sets a fixed width in pixels */
+  height: 133px; /* Sets a fixed height in pixels */
+  /* min-width: 140px; */
+}
+
+#overlay {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0);
+}
+
+#center_popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+}
+
+#pop_up {
+  position: fixed;
+  background-color: rgba(44, 82, 110);
+  padding: 24px;
+  border: 5px solid white;
+  border-radius: 8px;
+  box-shadow: 10px 5px 5px white;
+  display: flex;
+  flex-direction: column;
+  /* font-optical-sizing: auto; */
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* z-index: 300; */
+}
+
+#popup_text {
+  color: white;
+  font-size: 25px;
+}
+
+#continue_button {
+  margin: auto;
+  font-size: 25px;
+  font-family: "Saira Semi Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  color: rgb(44, 82, 110);
+  background-color: white;
+  box-shadow: 0 0.2em white;
+}
+
+#continue_button:hover {
+  transform: scale(1.1) !important; /* Slightly enlarges on hover */
+}

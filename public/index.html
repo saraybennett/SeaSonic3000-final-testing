@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>SeaSonic3000 🪼</title>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="overlay"></div>
+
+      <section class="sea-creature-pictures">
+        <!-- <img class="creature-img" id="plankton" src="./images/plankton.png" /> -->
+        <!-- <img class="creature-img" id="seaweed" src="./images/seaweed.png" /> -->
+        <img class="creature-still" id="angler" src="./images/angler.png" />
+        <!-- <img class="creature-img" id="angel" src="./images/angel.png" /> -->
+        <!-- <img class="creature-img" id="urchin" src="./images/urchin.png" /> -->
+        <img class="creature-still" id="eel" src="./images/eel.png" />
+        <!-- <img class="creature-img" id="seaweed2" src="./images/seaweed2.png" /> -->
+        <!-- <img class="creature-img" id="gearsnail" src="./images/gearsnail.png" /> -->
+        <img class="creature-img" id="jelly" src="./images/jellyfish.png" />
+      </section>
+      <div>
+        <h1 class="heading">
+          <b>Welcome to the SeaSonic3000!</b>
+        </h1>
+      </div>
+
+      <div id="center_popup">
+        <div id="pop_up">
+          <p id="popup_text"></p>
+          <button id="continue_button" class="button">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- load scripts -->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
