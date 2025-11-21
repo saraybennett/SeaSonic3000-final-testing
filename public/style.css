@@ -57,6 +57,41 @@ h1 {
   transition: all 0.1s ease; /* Smooth movement */
   z-index: 99; /*Ensure cursors appear on top*/
 }
+/* styling the sider -- img currently not working -- need to figure this out */
+.slider {
+  /* -webkit-appearance: none; */
+  width: 30%;
+  height: 5px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 23px;
+  height: 24px;
+  background: transparent;
+  background-image: url("ball.png");
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* .slider::-moz-range-thumb {
+  width: 23px;
+  height: 24px;
+  border: 0;
+  background: url("ball.png");
+  cursor: pointer;
+} */
 
 .creature-img {
   position: absolute;
